@@ -1,4 +1,4 @@
-Accomplishments:
+###Accomplishments:
 - Learned how to generate components with Angular (ng)
 - Learned how to connect newly generated component paths/routes to a constant
 - Learned how to connect components and their routes to security methods (PageGuard)
@@ -42,8 +42,8 @@ ____________________________
 
     Navigate to db-migrations/src/main/resources/db_migration
     Create a new sql file to insert the page into the prospective databases
-        **sql files must be named in the format "V#.#__something.sql"
-        **DO NOT edit currently existing sql files in this directory, new ones must be created
+        **sql files must be named in the format "V#.#__something.sql"**
+        **DO NOT edit currently existing sql files in this directory, new ones must be created**
     In the new sql file add the lines
         *(In this case )
     ```sql
