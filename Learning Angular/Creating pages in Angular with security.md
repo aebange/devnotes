@@ -1,9 +1,9 @@
-###Accomplishments:
-- Learned how to generate components with Angular (ng)
-- Learned how to connect newly generated component paths/routes to a constant
-- Learned how to connect components and their routes to security methods (PageGuard)
-- Learned how to grant specific roles permission to access components through the PageGuard
-
+##Subjects:
+- How to generate components with Angular (ng)
+- How to connect newly generated component paths/routes to a constant
+- How to connect components and their routes to security methods (PageGuard)
+- How to grant specific roles permission to access components through the PageGuard
+- How to add the component to the navbar
 ____________________________
 
 1. Generate the component with ng
@@ -55,3 +55,16 @@ ____________________________
     ```
     *Note: The '4' represents the row that this role rests in in our role database table, and the '14000' comes from the line above*
 
+4. Add the component to the navbar
+   Add the following lines to frontend>src>layout>navbar>navbar.component.html
+   ```html
+   <mat-list-item class="navItem" [routerLink]="constants.OBJECTNAME_ROUTE" routerLinkActive="active"
+                 *ngIf="userInfoDTO.pageRoutes.get(constants.OBJECTNAME_ROUTE)">
+     <a title="OBJECTNAME">OBJECTNAME</a>
+     <div fxFlex fxLayoutAlign="end end">
+       <a [routerLink]="constants.OBJECTNAME_ROUTE" target="_blank">
+         <i class="fas fa-external-link-alt navItemIcon" title="Open OBJECTNAME in a new window"></i>
+       </a>
+     </div>
+   </mat-list-item>
+   ``` 
