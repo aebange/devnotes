@@ -1,4 +1,4 @@
-##Subjects:
+###Subjects:
 - How to generate components with Angular (ng)
 - How to connect newly generated component paths/routes to a constant
 - How to connect components and their routes to security methods (PageGuard)
