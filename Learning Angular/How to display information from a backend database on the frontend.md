@@ -185,4 +185,93 @@ _____
 8. At this point the back-end should be done, now we need to make changes to the front-end
 
 ### Set up the front-end to read information from the database
-1.
+1. In this guide, we're assuming you've already got a page - but in case you don't, review [this](https://github.com/aebange/devnotes/blob/master/Learning%20Angular/Creating%20pages%20in%20Angular%20with%20security.md)
+2. Create a front-end DTO to store the DTO from the back-end
+    1. ``cd frontend``
+    2. ``ng g model models/url-dto --skipTests``
+    3. Edit the url-dto.ts, the contents will look like this...
+    ```typescript
+    export class UrlsDto {
+
+      public id: number;
+
+      public url: string;
+
+      public timestamp: string;
+
+    }
+    ```
+3. Create a front-end service to invoke the REST call to get the DTO from the back-end and store it in our front-end DTO
+    1. ``cd frontend``
+    2. ``ng g service services/urls --skipTests`` (Remember, angular adds '.service.ts' to the end, so keep 'service' out of the name)
+    3. Edit the file, the contents will look like this...
+    ```typescript
+   import { Injectable } from '@angular/core';
+   import {HttpClient} from "@angular/common/http";
+   import {UrlDTO} from "../models/url-dto";
+   import {Observable} from "rxjs";
+   import {environment} from "../../environments/environment";
+
+   @Injectable({
+     providedIn: 'root'
+   })
+   export class UrlService {
+
+     constructor(private httpClient: HttpClient) { }
+
+     // Make a REST call to the back-end to get a list of UrlsDTO
+     public getAllusers(): Observable<UrlDTO[]> {
+
+       const restUrl = environment.baseUrl + '/api/geturls'
+
+       return this.httpClient.get <UrlDTO[]> (restUrl)
+     }
+   }
+   ```
+### Connect your service to the html of your page
+1. Inject the service into the typescript of the page
+    1. Create a variable to store your observable
+    2. Inject the service into the constructor
+    3. The outcome should be something along the lines of...
+    ```typescript
+   public obsUrlList: Observable<UrlDTO[]>
+
+   constructor(public urlService: UrlService)
+   ```
+
+2. Edit the HTML to load the output
+    1. You SHOULD store the rendered page elements inside of something with an async pipe to prevent rendering them until the information is ready
+    ```html
+    <!--The async pipe will delay rendering till we get a response-->
+    <ng-container *ngIf="(this.obsUrlList | async) as urls">
+        <div fxLayout="column" fxLayoutGap="20px">
+            <!--The header row-->
+            <div class="header" fxLayout="row" fxLayoutGap="100px">
+                <div fxFlex="20%">
+                    id
+                </div>
+                <div fxFlex="20%">
+                    url
+                </div>
+                <div fxFlex="20%">
+                    timestamp
+                </div>
+            </div>
+
+            <!--The return from the database, iterate through with a for loop row-->
+            <div class="contents" fxLayout="row" fxlayoutGap="100px" *ngFor="let url of urls">
+                <div fxFlex="20%">
+                    {{ url.id }}
+                </div>
+                <div fxFlex="20%">
+                    {{ url.url }}
+                </div>
+                <div fxFlex="20%">
+                    {{ url.timestamp }}
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    ```
+
+3. At this point you should have a working page, good luck
