@@ -38,7 +38,7 @@ ____________________________
    
     In order to do this, we need to assign an ID to the page and then feed the roles_uicontrols table a role_id along with our object's custom ID (in this case 14000)
 
-    In this case, we will be assigning access permission to role '4' which can be found under the roles table in the db. Role '4' refers to row #4 - the "NCCS_SUPERUSER"
+    In this case, we will be assigning access permission to role '4' which can be found under the roles table in the db. Role '4' refers to row #4 - the "EXAMPLE_SUPERUSER"
 
     Navigate to db-migrations/src/main/resources/db_migration
     Create a new sql file to insert the page into the prospective databases
