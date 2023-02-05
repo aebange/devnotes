@@ -13,13 +13,13 @@ fun debugging stupid mistakes.
 2. The PATH
 3. PostgreSQL 9.6.24
 4. OpenJDK 1.8
-5. Maven 3.3.9
-6. Git for Windows
-7. Nssm
-8. Node Version Manager (NVM)
-9. Node 12.5.0
-10. Angular 9 CLI
-11. 7-Zip
+5. 7-Zip
+6. Maven 3.3.9
+7. Git for Windows
+8. Nssm
+9. Node Version Manager (NVM)
+10. Node 12.5.0
+11. Angular 9 CLI
 12. IntelliJ
 13. Postman (optional)
 14. Putty (optional)
@@ -71,6 +71,7 @@ You can edit your path/environment variables by searching "environment variables
 2. Enter ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` (Save yourself some time and copy/paste)
 3. Press "OK"
 
+
 ___
 
 ## PostgreSQL 9.6.24
@@ -116,14 +117,15 @@ Setting up our Java installation (Disclaimer, this one sucks)
 3. Run the MSI Installer you just downloaded
    1. Settings do not matter, just click through the installer
 4. Create the **JAVA_HOME** environment variable
-   1. Press ``Windows Key`` + ``R``
-   2. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
-   3. Hit "OK"
-      1. A window should open
-   4. Press "New" (the one in the upper half of the window)
-      1. Variable Name: ``JAVA_HOME``
-      2. Value: ``C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.332-2`` (or wherever it installed to)
-   5. Press "OK"
+   1. Open the environment variable editor and apply our changes
+      1. Press ``Windows Key`` + ``R``
+      2. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
+      3. Hit "OK"
+         1. A window should open
+      4. Press "New" (the one in the upper half of the window)
+         1. Variable Name: ``JAVA_HOME``
+         2. Value: ``C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.332-2`` (or wherever it installed to)
+      5. Press "OK"
 5. Verify that Java is now accessible in the PATH
    1. Open a **NEW** command prompt (old prompts may not update env vars)
       1. Press ``Windows Key`` + ``R``
@@ -138,4 +140,82 @@ Setting up our Java installation (Disclaimer, this one sucks)
 
 
 ___
-WIP
+
+## 7-Zip
+If you have Win-rar, that works too
+<br>
+<br>
+### Installation Instructions
+1. Download 7-Zip
+   1. Download [this installer](https://www.7-zip.org/a/7z2201-x64.exe)
+      1. If that link is dead, go to [this page](https://www.7-zip.org/download.html)
+2. Run the installer
+   1. Use the default settings and install the tool
+
+
+___
+
+## Maven 3.3.9
+Setting up our Java dependency manager
+<br>
+<br>
+### Installation Instructions
+1. Download Maven
+   1. Download [this zip file](https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.3.9/apache-maven-3.3.9-bin.zip)
+      1. If the link is dead, go to [this page](https://maven.apache.org/download.cgi)
+2. Unzip the .zip file with 7-zip (Windows un-zipper is too weak for this task)
+   1. Right-click on ``apache-maven-3.3.9.bin.zip``
+      1. Select 7-Zip -> Extract files...
+   2. In the "Extract" popup window
+      1. Extract To: ``c:\tools``
+   3. Press "OK"
+   4. Now, you should have a folder in ``c:\tools\apache-maven-3.3.9\`` containing the zip contents extracted
+3. Create the **M2_HOME** environment variable
+   1. Open the environment variable editor and apply our changes
+      1. Press ``Windows Key`` + ``R``
+      2. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
+      3. Hit "OK"
+         1. A window should open
+      4. Press "New" (the one in the upper half of the window)
+         1. Variable Name: ``M2_HOME``
+         2. Value: ``C:\tools\apache-maven-3.3.9`` (or wherever it installed to)
+      5. Press "OK"
+4. Add the **Maven\bin** directory to your PATH *(be careful, this one is different)*
+   1. Open the environment variable editor and apply our changes
+      1. Press ``Windows Key`` + ``R``
+         1. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
+         2. Hit "OK"
+            1. A window should open
+         3. If you can see a variable in the list called "PATH", then click it
+            2. With the "PATH" row highlighted, click the "Edit" button
+               1. A new window should open, click "NEW"
+                  1. Enter ``%M2_HOME%\bin``
+                  2. Hit OK and click through the rest of the menus
+         4. If PATH does not exist, click "New"
+            1. Variable Name: ``PATH``
+            2. Value: ``%M2_HOME%\bin``
+         5. Hit OK and click through the rest of the menus
+5. Verify that Maven works
+   1. Open a **NEW** command prompt (old prompts may not update env vars)
+      1. Press ``Windows Key`` + ``R``
+      2. Type in ``cmd``
+      3. Hit ``enter``
+   2. Type ``mvn -version`` and press ``Enter`` 
+   3. You should see "Apache Maven 3.3.9" and a bunch of other stuff appear
+   4. Let's run your first **mvn** command as a test to make sure all is well
+      1. Type in ``mvn help:effective-settings`` and press ``Enter``
+      2. You should see a bunch of tags appear, followed by a block containing "BUILD SUCCESS"
+
+
+___
+
+### Git for Windows
+Setting up our version control system
+<br>
+<br>
+## Installation Instructions
+1. Download Git for Windows
+   1. Download [this installer](https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe)
+      1. If that link is dead, go to [this page](https://gitforwindows.org/)
+2. Run the installer
+   1. 
