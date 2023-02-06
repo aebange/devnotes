@@ -15,7 +15,7 @@ fun debugging stupid mistakes.
 4. OpenJDK 1.8
 5. 7-Zip
 6. Maven 3.3.9
-7. [Git for Windows](#git-for-windows)
+7. [Git for Windows](##git-for-windows)
 9. Node Version Manager (NVM)
 10. Node 12.5.0
 11. Angular 9 CLI
