@@ -316,7 +316,7 @@ The Pro version of IntelliJ comes with an integrated database tool that will fil
 <br>
 <br>
 ### You *must* use IntelliJ 2021.2.4 or older**
-Currently, we relying on a 3rd-party plugin called "Mulit-run" for debugging. Multi-run currently has been abandoned. 
+Currently, we are relying on a 3rd-party plugin called "Multi-run" for debugging. Multi-run currently has been abandoned. 
 We need to fork this plugin to fix it on newer versions of IntelliJ, but until we do this, we have to use an older version.
 <br>
 <br>
