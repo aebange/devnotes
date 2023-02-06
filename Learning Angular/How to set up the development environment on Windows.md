@@ -346,8 +346,21 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
                1. Uncheck ``Insert pair quote``
             2. Select ``HTML/CSS`` on the left
                1. Uncheck ``Add quotes for attribute values on typing '='``
-   4. If IntelliJ is running slowly, you can attempt to disable un-used plugins by going to ``File`` -> ``Settings`` -> ``Plugins`` -> ``Installed``
+   4. If IntelliJ is running slowly, you can attempt to **disable un-used plugins** by going to ``File`` -> ``Settings`` -> ``Plugins`` -> ``Installed``
       1. This does not majorly improve performance, only attempt in extreme situations (*un-installing plugins one-by-one takes a long time*)
-   5. Disable automatic updates
-      1. ``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``System Settings`` -> ``Updates``
+   5. Disable **automatic updates**
+      1. Go to``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``System Settings`` -> ``Updates``
          1. Uncheck ``Automatically check updates for...``
+   6. Install the **Multi-run** plugin
+      1. Go to ``File`` -> ``Settings`` and search ``Plugins``
+         1. Click the ``Marketplace`` tab in the plugin menu on the left
+            1. Search ``Multirun`` and install it (the logo is two green arrows)
+   7. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
+      1. Go to ``File`` -> ``Settings`` and search ``Plugins``
+         1. Click the ``Marketplace`` tab in the plugin menu on the left
+            1. Search ``Gradianto`` and install it (the logo is two green arrows)
+               1. Your browser by default will have the theme changed to an ugly teal (in my opinion)
+                  1. If you go to ``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``Appearance``
+                     1. There is a drop-down menu for ``Theme``
+                        1. If you look in that menu, you should now have "Gradianto" options - choose your favorite
+                           1. NOTE: Sometimes IntelliJ needs a second to detect these, you may need to restart IntelliJ
