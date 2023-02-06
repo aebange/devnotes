@@ -16,7 +16,6 @@ fun debugging stupid mistakes.
 5. 7-Zip
 6. Maven 3.3.9
 7. Git for Windows
-8. Nssm
 9. Node Version Manager (NVM)
 10. Node 12.5.0
 11. Angular 9 CLI
@@ -38,7 +37,7 @@ Let's start with the easy stuff. We need a folder in a smart location to hold ou
    1. Press ``Windows Key`` + ``R``
       1. The "Run" menu should appear
    2. Type ``cmd`` in the text bar
-   3. Hold ``ctrl`` + ``shift`` and press ``enter`` (or click ok)
+   3. Click "OK" 
    4. You should see a black box (command prompt) open up
 2. Navigate to your C: directory
    1. NOTE: You can paste into the command prompt by right-clicking
@@ -46,6 +45,7 @@ Let's start with the easy stuff. We need a folder in a smart location to hold ou
       1. This will change your cursor/pointer location to C:\
    3. Type ``mkdir tools``
       1. This will create a new folder called "tools" in C:
+      2. NOTE: If you create this folder as an Admin, every time you try to install/use something you'll need permission (not suggested)
 
 
 ___
@@ -209,13 +209,134 @@ Setting up our Java dependency manager
 
 ___
 
-### Git for Windows
+## Git for Windows
 Setting up our version control system
 <br>
 <br>
-## Installation Instructions
+### Installation Instructions
 1. Download Git for Windows
    1. Download [this installer](https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe)
       1. If that link is dead, go to [this page](https://gitforwindows.org/)
-2. Run the installer
-   1. 
+2. Run the installer with default settings until it's finished
+
+
+___
+
+## Node Version Manager (NVM)
+Setting up our version manager for node
+<br>
+<br>
+### Installation Instructions
+1. If you've installed Node before, please uninstall it now
+   1. If you're unsure, check the Windows application wizard
+      1. Press ``Windows Key`` + ``R``
+      2. Enter ``appwiz.cpl`` and hit "OK"
+      3. Search for an item called "Node", uninstall it by clicking on it and hitting "Uninstall" (if you find it)
+2. Download the Node Version Manager
+   1. Download [this installer](https://github.com/coreybutler/nvm-windows/releases/download/1.1.10/nvm-setup.exe)
+      1. If that link is dead, go to [this page](https://github.com/nvm-sh/nvm)
+3. Run the ``nvm-setup.exe`` installer
+   1. Install to ``c:\tools\nvm`` (first prompt)
+   2. For the second directory prompt, leave as default
+   3. Click through the installer/finish it
+4. Add ``c:\tools\nvm`` to your PATH (to use nvm commands from anywhere)
+   1. Open the environment variable editor and apply our changes
+      1. Press ``Windows Key`` + ``R``
+         1. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
+         2. Hit "OK"
+            1. A window should open
+         3. If you can see a variable in the list called "PATH", then click it
+            2. With the "PATH" row highlighted, click the "Edit" button
+               1. A new window should open, click "NEW"
+                  1. Enter ``c:\tools\nvm``
+                  2. Hit OK and click through the rest of the menus
+         4. If PATH does not exist, click "New"
+            1. Variable Name: ``PATH``
+            2. Value: ``c:\tools\nvm``
+         5. Hit OK and click through the rest of the menus
+5. Verify that nvm is working correctly
+   1. Open a new command prompt
+      1. ``Windows Key`` + ``R``
+      2. Enter ``cmd`` and hit "OK"
+   2. In the command prompt...
+      1. Enter ``nvm ls`` and hit ``Enter``
+      2. You should see that no versions are currently installed
+
+
+___
+
+## Node 12.5.0
+Setting up our Javascript environment
+<br>
+<br>
+### Installation Instructions
+1. Open a new command prompt
+   1. ``Windows Key`` + ``R``
+   2. Enter ``cmd`` and hit "OK"
+2. Install Node 12.5.0
+   1. Enter ``nvm install 12.5.0`` and hit ``Enter``
+   2. Enter ``nvm use 12.5.0`` and hit ``Enter``
+3. Verify Node is using the correct version
+   1. Enter ``node --version``
+      1. You should see that 12.5.0 is in-use
+
+
+___
+
+## Angular 9 CLI
+Setting up our angular environment
+<br>
+<br>
+### Installation Instructions
+1. Open a new command prompt
+   1. ``Windows Key`` + ``R``
+   2. Enter ``cmd`` and hit "OK"
+2. Uninstall any existing versions of Angular CLI
+   1. Enter ``npm uninstall @angular/cli`` and hit ``Enter``
+   2. Enter ``npm uninstall -g @angular/cli`` and hit ``Enter``
+3. Install Angular 9 CLI
+   1. Enter ``npm install -g @angular/cli@9.0.6`` and hit ``Enter``
+4. Verify that Angular 9 CLI is installed
+   1. Enter ``npm list -g --depth 0``
+      1. You should see that Angular 9.0.6 is installed
+
+
+___
+
+## IntelliJ
+Setting up our IDE, this is the hardest part
+<br>
+<br>
+### IntelliJ Pro vs Community Edition
+You do not need IntelliJ pro. **If you are a college student or have a .edu email, you can get pro for free [by going here.](https://www.jetbrains.com/community/education/#students)** 
+Otherwise, the Community Edition is still a complete package. *The features offered by the Pro version will not be necessary 
+for most projects.* However - for our project, you will want a tool that can view/edit PostgreSQL databases. 
+This can be accomplished with free 3rd party applications like [pgAdmin](https://www.pgadmin.org/download/). 
+The Pro version of IntelliJ comes with an integrated database tool that will fill this role otherwise.
+<br>
+<br>
+### You *must* use IntelliJ 2021.2.4 or older**
+Currently, we relying on a 3rd-party plugin called "Mulit-run" for debugging. Multi-run currently has been abandoned. 
+We need to fork this plugin to fix it on newer versions of IntelliJ, but until we do this, we have to use an older version.
+<br>
+<br>
+### Installation Instructions
+1. Download IntelliJ
+   1. Get the **Professional/Ultimate Edition** (2021.2.4)
+      1. Download [this installer](https://download.jetbrains.com/idea/ideaIU-2021.2.4.exe)
+         1. If that link is broken, find 2021.2.4 on [this page](https://www.jetbrains.com/idea/download/other.html)
+   2. OR get the **Community Edition** (2021.2.4)
+      1. Download [this installer](https://download.jetbrains.com/idea/ideaIC-2021.2.4.exe)
+         1. If that link is broken, find 2021.2.4 on [this page](https://www.jetbrains.com/idea/download/other.html)
+2. Run the Installer
+   1. When asked where you want to install IntelliJ, select ``c:\tools\intellij``
+   2. The rest of the menu options can be left to the default, finish the installation
+3. Configure IntelliJ settings
+   1. Make sure **Maven** is configured correctly
+      1. Go to ``File`` -> ``Settings``
+         1. Search for ``Maven``
+            1. Under ``Build, Execution, Deployment`` -> ``Build Tools`` -> ``Maven``
+               1. Maven home path: ``c:\tools\apache-maven-3.3.9``
+               2. User Settings file: ``c:\tools\apache-maven-3.3.9\conf\settings.xml``
+   2. I suggest leaving spell checking enabled
+   3. 
