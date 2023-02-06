@@ -10,8 +10,8 @@ fun debugging stupid mistakes.
 
 ### Index:
 1. [The Tools directory](#the-tools-directory)
-2. The PATH
-3. PostgreSQL 9.6.24
+2. [The PATH](#the-path)
+3. [PostgreSQL 9.6.24](#postgresql-9.6.24)
 4. OpenJDK 1.8
 5. 7-Zip
 6. Maven 3.3.9
