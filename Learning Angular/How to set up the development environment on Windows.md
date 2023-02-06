@@ -20,10 +20,8 @@ fun debugging stupid mistakes.
 10. [Node 12.5.0](#node-1250)
 11. [Angular 9 CLI](#angular-9-cli)
 12. [IntelliJ](#intellij)
-13. Postman (optional)
-14. Putty (optional)
-15. Sublime Text (optional)
-16. Notepad++ (optional)
+13. [Postman](#postman)
+14. [Putty](#putty)
 
 ___
 
@@ -460,3 +458,33 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
    2. Select your Multirun ``Full webApp`` option
    3. Hit the debug button
    4. Hopefully your full webapp starts up, godspeed
+
+
+___
+
+## Postman
+Setting up our API testing tool
+<br>
+<br>
+### Installation Instructions
+1. Download Postman
+   1. Download [this installer](https://dl.pstmn.io/download/latest/win64)
+      1. If that link is dead, go to [this page](https://www.postman.com/downloads/?utm_source=postman-home)
+      2. NOTE: Version does not matter here
+2. Open/run the installer you just downloaded
+   1. The default settings should be fine for now
+
+
+___
+
+## Putty
+Setting up our Telnet client
+<br>
+<br>
+### Installation Instructions
+1. Download Putty
+   1. Download [this installer](https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi)
+      1. If that link is dead, go to [this page](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+      2. NOTE: Version does not matter here
+2. Open/run the installer you just downloaded
+   1. The default settings should be fine for now
