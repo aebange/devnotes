@@ -9,13 +9,13 @@ and **do not skim**. You will save yourself time if you take the time to read ca
 fun debugging stupid mistakes.
 
 ### Index:
-1. The Tools directory
+1. [The Tools directory](##-The-tools-directory)
 2. The PATH
 3. PostgreSQL 9.6.24
 4. OpenJDK 1.8
 5. 7-Zip
 6. Maven 3.3.9
-7. Git for Windows
+7. [Git for Windows](##-Git-for-Windows)
 9. Node Version Manager (NVM)
 10. Node 12.5.0
 11. Angular 9 CLI
