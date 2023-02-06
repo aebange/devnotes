@@ -416,4 +416,28 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
          1. You should see "Spring Boot", expand that row to see "Application" under it
             ![An image depicting the spring boot run config](https://i.imgur.com/oZJomBm.png)
       6. Rename "Application" to something like ``App Backend`` (you may want to include your app's name - this name is up to you)
-      7. 
+      7. Expand the "Environment" tab and add ``-Dspring.profiles.active=dev``
+      8. Hit ``Apply`` and ``OK``
+   2. Set upm your Angular Application
+      1. Go to ``Run`` -> ``Edit Configurations``
+         1. Select the ``+`` icon and in the dropdown click on ``NPM`` (red icon)
+         2. In the window that opens...
+            1. Name: ``Angular CLI Server`` 
+            2. Command: ``run``
+            3. Scripts: ``start``
+            4. Package.json: **This should auto-populate, make sure it points to your package.json file in the frontend folder**
+            5. Node Interpreter: ``~/.nvm/versions/node/v12.5.0/bin/node``
+               ![An image depicting how the angular app should look](https://i.imgur.com/SkJNy4G.png)
+         3. Hit ``Apply`` and ``OK``
+   3. Set up your Frontend
+      1. Go to ``Run`` -> ``Edit Configurations``
+         1. Select the ``+`` icon and in the dropdown click on ``Javascript Debug``
+         2. In the window that opens...
+            1. Name: ``App Frontend`` (you may want to include your app's name - this name is up to you)
+            2. URL: ``http://localhost:4200``
+            3. Browser: ``Chrome`` 
+               1. NOTE: **FIREFOX WILL NOT WORK HERE** DESPITE BEING LISTED, INTELLIJ DOES NOT SUPPORT IT STILL (2023)
+            4. Check: ``Ensure breakpoints are detected when loading scripts``
+               ![An image depicting how the frontend should look](https://i.imgur.com/ZDCDte3.png)
+      2. Press ``Apply`` and ``OK``
+      
