@@ -369,7 +369,7 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
                         1. NOTE: Sometimes IntelliJ needs a second to detect these, you may need to restart IntelliJ
 <br>
 <br>
-                        2. 
+
 ### Configure the project/run-environment in IntelliJ
 1. Clone the project using git
    1. Go to whatever tool/website you're using for version control online (Github, Gitlab, etc)
