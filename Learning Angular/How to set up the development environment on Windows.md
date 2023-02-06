@@ -332,7 +332,6 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
    1. When asked where you want to install IntelliJ, select ``c:\tools\intellij``
    2. The rest of the menu options can be left to the default, finish the installation
 <br>
-<br>
 
 ### Configure IntelliJ settings
 1. Make sure **Maven** is configured correctly
@@ -358,7 +357,13 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
    1. Go to ``File`` -> ``Settings`` and search ``Plugins``
       1. Click the ``Marketplace`` tab in the plugin menu on the left
          1. Search ``Multirun`` and install it (the logo is two green arrows)
-7. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
+         2. Make sure Multirun installed
+            1. Click the ``Installed`` tab in the Plugins menu and ensure Multirun is enabled/checked
+               1. NOTE: If this is grayed out, IntelliJ is still probably indexing. Try restarting
+7. Tell IntelliJ **not to open the last project** when starting
+   1. Go to ``File`` -> ``Settings`` and search ``reopen``
+      1. In the ``System Settings`` menu on the left, uncheck ``Reopen projects on startup``
+8. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
    1. Go to ``File`` -> ``Settings`` and search ``Plugins``
       1. Click the ``Marketplace`` tab in the plugin menu on the left
          1. Search ``Gradianto`` and install it (the logo is two green arrows)
@@ -367,7 +372,6 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
                   1. There is a drop-down menu for ``Theme``
                      1. If you look in that menu, you should now have "Gradianto" options - choose your favorite
                         1. NOTE: Sometimes IntelliJ needs a second to detect these, you may need to restart IntelliJ
-<br>
 <br>
 
 ### Configure the project/run-environment in IntelliJ
@@ -393,4 +397,23 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
    6. Attempt to build the package with maven
       1. This is the ultimate test that you've installed everything correctly
       2. Enter ``mvn clean package -Pprod`` and hit ``Enter`` and hopefully everything builds successfully
-
+2. Set up your project
+   1. Open IntelliJ (if it's already open, go to ``File`` -> ``Open``)
+   2. Open your project's folder
+      1. Navigate to where your cloned project folder is (something like ``C:\Users\Your Name\IdeaProjects\YourProjectNameHere``)
+      2. Select the folder and hit open
+   3. IntelliJ will now open your project and begin indexing, this will take a moment
+   4. Make sure that the folder name displayed in the project browser (the left side tabs) is correct
+3. Set up your run configs
+   1. Set up the Java back-end
+      1. You should have a folder in your project called ``Backend``, expand that
+      2. Find ``Backend\src\main\java\com.lessons\Application`` (we're looking for a Java class called Application)
+      3. Right-click the Application file and hit "Debug"
+         1. NOTE: If this is grayed out, IntelliJ is still probably indexing. Try restarting
+      4. This should start debugging the back-end. You should see something in your IntelliJ debug terminal that says something like "Webapp is up"
+         1. If you do see "Webapp is up" then it worked, otherwise you're gonna have to find the problem (good luck)
+      5. Go to ``Run`` -> ``Edit Configurations`` (top of your screen)
+         1. You should see "Spring Boot", expand that row to see "Application" under it
+            ![An image depicting the spring boot run config](https://i.imgur.com/oZJomBm.png)
+      6. Rename "Application" to something like ``App Backend`` (you may want to include your app's name - this name is up to you)
+      7. 
