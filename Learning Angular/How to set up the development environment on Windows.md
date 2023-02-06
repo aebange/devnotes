@@ -440,4 +440,23 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
             4. Check: ``Ensure breakpoints are detected when loading scripts``
                ![An image depicting how the frontend should look](https://i.imgur.com/ZDCDte3.png)
       2. Press ``Apply`` and ``OK``
-      
+   4. Set up multi-run (the full app)
+      1. Go to ``Run`` -> ``Edit Configurations``
+         1. Select the ``+`` icon and in the dropdown click on ``Multirun`` (two green arrows, if it's grayed out you may need to restart IntelliJ)
+         2. In the window that opens...
+            1. Name: ``Full webApp`` (you may want to include your app's name - this name is up to you)
+            2. Hit the ``+`` (the one in the configuration tab this time)
+               1. Select your **Backend**
+            3. Hit the ``+`` (the one in the configuration tab this time)
+               2. Select your **Angular CLI Server** 
+            4. Hit the ``+`` (the one in the configuration tab this time)
+               1. Select your **Frontend**
+            5. Delay: ``5.0`` seconds (or 7.0 seconds if your PC sucks)
+            6. Check the same boxes as the image below (1, 4, and 5)
+               ![An image depicting how the multirun should look](https://i.imgur.com/ELipY7A.png)
+         3. Hit ``Apply`` and ``OK``
+4. Run the full webapp
+   1. In the top right of IntelliJ, hit the dropdown menu to the left of the play button
+   2. Select your Multirun ``Full webApp`` option
+   3. Hit the debug button
+   4. Hopefully your full webapp starts up, godspeed
