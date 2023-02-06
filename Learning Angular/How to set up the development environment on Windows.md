@@ -11,15 +11,15 @@ fun debugging stupid mistakes.
 ### Index:
 1. [The Tools directory](#the-tools-directory)
 2. [The PATH](#the-path)
-3. [PostgreSQL 9.6.24](#postgresql-9.6.24)
-4. OpenJDK 1.8
-5. 7-Zip
-6. Maven 3.3.9
+3. [PostgreSQL 9.6.24](#postgresql-9624)
+4. [OpenJDK 1.8](#openjdk-18)
+5. [7-Zip](#7-zip)
+6. [Maven 3.3.9](#maven-339)
 7. [Git for Windows](#git-for-windows)
-9. Node Version Manager (NVM)
-10. Node 12.5.0
-11. Angular 9 CLI
-12. IntelliJ
+9. [Node Version Manager (NVM)](#node-version-manager-nvm)
+10. [Node 12.5.0](#node-1250)
+11. [Angular 9 CLI](#angular-9-cli)
+12. [IntelliJ](#intellij)
 13. Postman (optional)
 14. Putty (optional)
 15. Sublime Text (optional)
