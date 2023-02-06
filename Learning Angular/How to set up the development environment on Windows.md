@@ -330,9 +330,10 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
          1. If that link is broken, find 2021.2.4 on [this page](https://www.jetbrains.com/idea/download/other.html)
 2. Run the Installer
    1. When asked where you want to install IntelliJ, select ``c:\tools\intellij``
-   2. The rest of the menu options can be left to the default, finish the installation 
+   2. The rest of the menu options can be left to the default, finish the installation
 <br>
 <br>
+
 ### Configure IntelliJ settings
 1. Make sure **Maven** is configured correctly
       1. Go to ``File`` -> ``Settings``
@@ -368,6 +369,7 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
                         1. NOTE: Sometimes IntelliJ needs a second to detect these, you may need to restart IntelliJ
 <br>
 <br>
+                        2. 
 ### Configure the project/run-environment in IntelliJ
 1. Clone the project using git
    1. Go to whatever tool/website you're using for version control online (Github, Gitlab, etc)
@@ -391,3 +393,4 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
    6. Attempt to build the package with maven
       1. This is the ultimate test that you've installed everything correctly
       2. Enter ``mvn clean package -Pprod`` and hit ``Enter`` and hopefully everything builds successfully
+
