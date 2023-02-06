@@ -330,37 +330,64 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
          1. If that link is broken, find 2021.2.4 on [this page](https://www.jetbrains.com/idea/download/other.html)
 2. Run the Installer
    1. When asked where you want to install IntelliJ, select ``c:\tools\intellij``
-   2. The rest of the menu options can be left to the default, finish the installation
-3. Configure IntelliJ settings
-   1. Make sure **Maven** is configured correctly
+   2. The rest of the menu options can be left to the default, finish the installation 
+<br>
+<br>
+### Configure IntelliJ settings
+1. Make sure **Maven** is configured correctly
       1. Go to ``File`` -> ``Settings``
          1. Search for ``Maven``
             1. Under ``Build, Execution, Deployment`` -> ``Build Tools`` -> ``Maven``
                1. Maven home path: ``c:\tools\apache-maven-3.3.9``
                2. User Settings file: ``c:\tools\apache-maven-3.3.9\conf\settings.xml``
-   2. I suggest leaving spell checking enabled
-   3. Disable **Smart Quotes**
-      1. Go to ``File`` -> ``Settings``
-         1. Search for ``quote``
-            1. Select ``Smart Keys`` on the left
-               1. Uncheck ``Insert pair quote``
-            2. Select ``HTML/CSS`` on the left
-               1. Uncheck ``Add quotes for attribute values on typing '='``
-   4. If IntelliJ is running slowly, you can attempt to **disable un-used plugins** by going to ``File`` -> ``Settings`` -> ``Plugins`` -> ``Installed``
-      1. This does not majorly improve performance, only attempt in extreme situations (*un-installing plugins one-by-one takes a long time*)
-   5. Disable **automatic updates**
-      1. Go to``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``System Settings`` -> ``Updates``
-         1. Uncheck ``Automatically check updates for...``
-   6. Install the **Multi-run** plugin
-      1. Go to ``File`` -> ``Settings`` and search ``Plugins``
-         1. Click the ``Marketplace`` tab in the plugin menu on the left
-            1. Search ``Multirun`` and install it (the logo is two green arrows)
-   7. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
-      1. Go to ``File`` -> ``Settings`` and search ``Plugins``
-         1. Click the ``Marketplace`` tab in the plugin menu on the left
-            1. Search ``Gradianto`` and install it (the logo is two green arrows)
-               1. Your browser by default will have the theme changed to an ugly teal (in my opinion)
-                  1. If you go to ``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``Appearance``
-                     1. There is a drop-down menu for ``Theme``
-                        1. If you look in that menu, you should now have "Gradianto" options - choose your favorite
-                           1. NOTE: Sometimes IntelliJ needs a second to detect these, you may need to restart IntelliJ
+2. I suggest leaving spell checking enabled
+3. Disable **Smart Quotes**
+   1. Go to ``File`` -> ``Settings``
+      1. Search for ``quote``
+         1. Select ``Smart Keys`` on the left
+            1. Uncheck ``Insert pair quote``
+         2. Select ``HTML/CSS`` on the left
+            1. Uncheck ``Add quotes for attribute values on typing '='``
+4. If IntelliJ is running slowly, you can attempt to **disable un-used plugins** by going to ``File`` -> ``Settings`` -> ``Plugins`` -> ``Installed``
+   1. This does not majorly improve performance, only attempt in extreme situations (*un-installing plugins one-by-one takes a long time*)
+5. Disable **automatic updates**
+   1. Go to``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``System Settings`` -> ``Updates``
+      1. Uncheck ``Automatically check updates for...``
+6. Install the **Multi-run** plugin
+   1. Go to ``File`` -> ``Settings`` and search ``Plugins``
+      1. Click the ``Marketplace`` tab in the plugin menu on the left
+         1. Search ``Multirun`` and install it (the logo is two green arrows)
+7. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
+   1. Go to ``File`` -> ``Settings`` and search ``Plugins``
+      1. Click the ``Marketplace`` tab in the plugin menu on the left
+         1. Search ``Gradianto`` and install it (the logo is two green arrows)
+            1. Your browser by default will have the theme changed to an ugly teal (in my opinion)
+               1. If you go to ``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``Appearance``
+                  1. There is a drop-down menu for ``Theme``
+                     1. If you look in that menu, you should now have "Gradianto" options - choose your favorite
+                        1. NOTE: Sometimes IntelliJ needs a second to detect these, you may need to restart IntelliJ
+<br>
+<br>
+### Configure the project/run-environment in IntelliJ
+1. Clone the project using git
+   1. Go to whatever tool/website you're using for version control online (Github, Gitlab, etc)
+   2. Navigate to the project page and click the button on the right that provides the git command for cloning
+      ![Image Depicting Github Link Location](https://i.imgur.com/gOiHi7J.png)
+      1. NOTE: Depending on your security, you may need to use the ``HTTPS`` OR ``SSH`` method
+   3. Open a new command prompt
+      1. ``Windows Key`` + ``R``
+      2. Type ``cmd`` and hit "OK"
+   4. Navigate to the IntelliJ project directory
+      1. Type ``cd %USERPROFILE%`` and hit ``Enter``
+      2. Type ``cd IdeaProjects`` and hit ``Enter``
+         1. NOTE: If ``IdeaProjects`` doesn't exist, create it
+            1. Type ``mkdir IdeaProjects`` and hit ``Enter``
+            2. Type ``cd IdeaProjects`` and hit ``Enter``
+   5. Git clone your project
+      1. Type ``git clone `` and paste the link you got from Github/Gitlab/whatever
+         1. It should look something like ``git clone https://github.com/something``
+         2. Hit ``Enter`` and hopefully it downloads the project
+      2. Enter your project's folder by typing ``cd PROJECTNAMEHERE``
+   6. Attempt to build the package with maven
+      1. This is the ultimate test that you've installed everything correctly
+      2. Enter ``mvn clean package -Pprod`` and hit ``Enter`` and hopefully everything builds successfully
