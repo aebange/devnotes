@@ -361,7 +361,11 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
 7. Tell IntelliJ **not to open the last project** when starting
    1. Go to ``File`` -> ``Settings`` and search ``reopen``
       1. In the ``System Settings`` menu on the left, uncheck ``Reopen projects on startup``
-8. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
+8. Disable the Javascript/Typescript Code Linter
+   1. IntelliJ comes with a tool to suggest "best practices" when programming with JS/TS. But their "best practices" aren't necessarily the best
+      1. Go to ``File`` -> ``Settings`` -> ``Editor`` -> ``Inspections`` -> ``JavaScript and Typescript`` -> ``Code quality tools``
+      2. Uncheck **ESLint** and **TSLint**
+9. (Optional) Install a theme plugin to make IntelliJ easier on the eyes
    1. Go to ``File`` -> ``Settings`` and search ``Plugins``
       1. Click the ``Marketplace`` tab in the plugin menu on the left
          1. Search ``Gradianto`` and install it (the logo is two green arrows)
