@@ -339,4 +339,15 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
                1. Maven home path: ``c:\tools\apache-maven-3.3.9``
                2. User Settings file: ``c:\tools\apache-maven-3.3.9\conf\settings.xml``
    2. I suggest leaving spell checking enabled
-   3. 
+   3. Disable **Smart Quotes**
+      1. Go to ``File`` -> ``Settings``
+         1. Search for ``quote``
+            1. Select ``Smart Keys`` on the left
+               1. Uncheck ``Insert pair quote``
+            2. Select ``HTML/CSS`` on the left
+               1. Uncheck ``Add quotes for attribute values on typing '='``
+   4. If IntelliJ is running slowly, you can attempt to disable un-used plugins by going to ``File`` -> ``Settings`` -> ``Plugins`` -> ``Installed``
+      1. This does not majorly improve performance, only attempt in extreme situations (*un-installing plugins one-by-one takes a long time*)
+   5. Disable automatic updates
+      1. ``File`` -> ``Settings`` -> ``Appearance & Behavior`` -> ``System Settings`` -> ``Updates``
+         1. Uncheck ``Automatically check updates for...``
