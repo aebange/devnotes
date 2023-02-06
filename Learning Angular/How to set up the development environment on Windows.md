@@ -82,7 +82,7 @@ Setting up our local SQL database
 1. Go to [this download link to get the installer](https://www.enterprisedb.com/postgresql-tutorial-resources-training?uuid=91f8264f-8a2d-434a-9559-4dfa9b3b80b1&campaignId=701380000017oAXAAY)
    1. If that link is dead, use [this page instead](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 2. Run the MSI Installer
-   1. Run the ``postgresql-9.6.24-1-windows-x64.exe`` file you just downloaded
+   1. Open the ``postgresql-9.6.24-1-windows-x64.exe`` file you just downloaded (should be in your downloads folder)
       1. NOTE: It may install Microsoft Visual C++ Redistributable, this is fine
    2. Press "Next" until you reach the selector for **installation directory**
       1. Select ``C:\tools`` - the folder we created earlier
@@ -235,7 +235,7 @@ Setting up our version manager for node
 2. Download the Node Version Manager
    1. Download [this installer](https://github.com/coreybutler/nvm-windows/releases/download/1.1.10/nvm-setup.exe)
       1. If that link is dead, go to [this page](https://github.com/nvm-sh/nvm)
-3. Run the ``nvm-setup.exe`` installer
+3. Open the ``nvm-setup.exe`` installer you just downloaded (should be in your downloads folder)
    1. Install to ``c:\tools\nvm`` (first prompt)
    2. For the second directory prompt, leave as default
    3. Click through the installer/finish it
@@ -328,7 +328,7 @@ We need to fork this plugin to fix it on newer versions of IntelliJ, but until w
    2. OR get the **Community Edition** (2021.2.4)
       1. Download [this installer](https://download.jetbrains.com/idea/ideaIC-2021.2.4.exe)
          1. If that link is broken, find 2021.2.4 on [this page](https://www.jetbrains.com/idea/download/other.html)
-2. Run the Installer
+2. Run the Installer you just downloaded
    1. When asked where you want to install IntelliJ, select ``c:\tools\intellij``
    2. The rest of the menu options can be left to the default, finish the installation
 <br>
