@@ -94,11 +94,8 @@ Setting up our local SQL database
    5. Click through the defaults for the next few menus, but **stop when you see "Completing the postgresql setup wizard"**
       1. Un-check "Launch Stackbuilder at exit" - we don't care for this
       2. Press finish
-3. PostgreSQL is now installed, but not deployed
-
-### Deploying PostgreSQL
-1. Add PostgreSQL to your PATH
-   1. Press ``Windows Key`` + ``R``
+3. Add PostgreSQL to your PATH
+   6. Press ``Windows Key`` + ``R``
       1. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
       2. Hit "OK"
          1. A window should open
@@ -111,7 +108,7 @@ Setting up our local SQL database
          1. Variable Name: ``PATH``
          2. Value: ``C:\tools\PostgreSQL\bin``
       5. Hit OK and click through the rest of the menus
-2. Verify that PSQL was added to the path correctly
+4. Verify that PSQL was added to the path correctly
    1. Open a **NEW** command prompt (old prompts may not update env vars)
       1. Press ``Windows Key`` + ``R``
       2. Type in ``cmd``
