@@ -83,10 +83,8 @@ Setting up our local SQL database
    1. Open the ``postgresql-9.6.24-1-windows-x64.exe`` file you just downloaded (should be in your downloads folder)
       1. NOTE: It may install Microsoft Visual C++ Redistributable, this is fine
    2. Press "Next" until you reach the selector for **installation directory**
-      1. Select ``C:\tools`` - the folder we created earlier
-         1. The final install path should be something like ``C:\tools\PostgreSQL\9.6``
-      2. For the data directory, use the defaults
-         1. ``C:\tools\PostgreSQL\9.6\data``
+      1. The installation path should be something like ``C:\tools\PostgreSQL\9.6``
+         1. For the data directory, use the defaults
    3. For the password:
       1. NOTE: This is a local database, it's OK to have an easy-to-type password
       2. Make the password ``secret`` (you'll thank me later)
@@ -96,8 +94,32 @@ Setting up our local SQL database
    5. Click through the defaults for the next few menus, but **stop when you see "Completing the postgresql setup wizard"**
       1. Un-check "Launch Stackbuilder at exit" - we don't care for this
       2. Press finish
-3. PostgreSQL is now installed (but not deployed, we'll do that later)
+3. PostgreSQL is now installed, but not deployed
 
+### Deploying PostgreSQL
+1. Add PostgreSQL to your PATH
+   1. Press ``Windows Key`` + ``R``
+      1. Copy/paste ``rundll32.exe sysdm.cpl,EditEnvironmentVariables`` into the text bar
+      2. Hit "OK"
+         1. A window should open
+      3. If you can see a variable in the list called "PATH", then click it
+         2. With the "PATH" row highlighted, click the "Edit" button
+            1. A new window should open, click "NEW"
+               1. Enter ``C:\tools\PostgreSQL\9.6\bin`` (or wherever you ended up installing this)
+               2. Hit OK and click through the rest of the menus
+      4. If PATH does not exist, click "New"
+         1. Variable Name: ``PATH``
+         2. Value: ``C:\tools\PostgreSQL\bin``
+      5. Hit OK and click through the rest of the menus
+2. Verify that PSQL was added to the path correctly
+   1. Open a **NEW** command prompt (old prompts may not update env vars)
+      1. Press ``Windows Key`` + ``R``
+      2. Type in ``cmd``
+      3. Hit ``enter``
+   2. In the command prompt...
+      1. Type ``psql --version`` and press ``enter``
+      2. You should see ``psql (PostgreSQL) 9.6.24``
+         1. If nothing shows, you did it wrong
 
 ___
 
